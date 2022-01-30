@@ -1,0 +1,95 @@
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+// $primary-font: 'Montserrat', sans-serif;
+
+:root {
+  // ============ colors ===============
+  --grey-color: #eaeaea;
+  --white-color: #ffffff;
+  --green-color: #4caf50;
+  --red-color: #f42c3c;
+  --link-color: #0096c7;
+  --disabled-color: #a6a6a6;
+  --yellow-dark-color: #ffe177;
+  --dark-blue-color: #000046;
+  --purpure-color: #851fff;
+  --yellow-color: #fff9e4;
+  --text-dark-color: #202020;
+  --text-grey-color: #5b5b5b;
+  --bg-light-color: #fdfdff;
+  --bg-blue-color: #f6f6ff;
+  --checkbox-active: #e5e5ff;
+  --bright-yellow: #fbc53c;
+  --filter-bg-button: #f4f6fc;
+  // ============ font-sizes ===========
+  // --: 10px/14px;
+  --extra-small-font-size: 12px/20px;
+  --small-font-size: 14px/22px;
+  --normal-font-size: 16px/24px;
+  --filter-title-size: 20px/28px;
+  --card-title-font-size: 24px/32px;
+  --view-title-font-size: 36px/44px;
+  // ============ fonts ===========
+  --primary-font: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 1223px) {
+  :root {
+    --small-font-size: 12px/14px;
+    --normal-font-size: 14px/24px;
+    --large-font-size: 16px/24px;
+    --card-title-font-size: 16px/20px;
+    --view-title-font-size: 24px/32px;
+  }
+}
+
+// @media screen and (max-width: 1024px) {
+//   :root {
+//     --normal: 12px/20px;
+//   }
+// }
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--primary-font), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1270px;
+  width: 100%;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}

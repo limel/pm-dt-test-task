@@ -1,0 +1,8 @@
+{
+  "short_name": "PM dt test task",
+  "name": "PM dt test task",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

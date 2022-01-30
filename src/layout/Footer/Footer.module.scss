@@ -1,0 +1,113 @@
+.main {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url('/img/footer-bg.jpg');
+  color: var(--grey-color);
+  padding-top: 67.5px;
+  padding-bottom: 23px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1270px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.navigation {
+  margin-right: 228px;
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font: var(--normal-font-size) var(--primary-font);
+    font-weight: 600;
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    li {
+      cursor: pointer;
+      margin-bottom: 15px;
+      font: var(--small-font-size) var(--primary-font);
+    }
+  }
+}
+
+.copyright {
+  padding: 20px;
+  width: 100%;
+  margin-top: 67.5px;
+  border-top: 1px solid var(--grey-color);
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      font: var(--small-font-size) var(--primary-font);
+      padding-right: 30px;
+      padding-left: 30px;
+      border-right: 1px solid #fff;
+      &:last-child {
+        border-right: none;
+        padding-right: 0;
+      }
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1223px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .navigation {
+    margin-right: 0;
+    margin-bottom: 40px;
+
+    &__title {
+      margin-bottom: 10px;
+    }
+    // &:last-of-type {
+    //   margin-bottom: 40px;
+    // }
+  }
+
+  .copyright {
+    margin-top: 125px;
+
+    &__list {
+      flex-wrap: wrap;
+      li {
+        width: 50%;
+        border: none;
+        padding: 0;
+        &:first-child {
+          width: calc(50% - 15px);
+          border-right: 1px solid #fff;
+          margin-right: 15px;
+        }
+        &:last-child {
+          margin-top: 12px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+//copyright padding 20px

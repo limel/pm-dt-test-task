@@ -1,0 +1,36 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  width: fit-content;
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      display: inherit;
+      align-items: inherit;
+      justify-content: inherit;
+      width: 24px;
+      height: 24px;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      transition: ease 0.3s transform;
+    }
+    &:hover {
+      svg {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

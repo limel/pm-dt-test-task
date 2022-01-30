@@ -1,0 +1,300 @@
+.option {
+  padding: 20px;
+  background-color: var(--bg-light-color);
+  margin-bottom: 15px;
+  font: var(--small-font-size) var(--primary-font);
+  color: var(--text-dark-color);
+
+  &__title {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid var(--grey-color);
+    margin-bottom: 20px;
+    font: var(--filter-title-size) var(--primary-font);
+    font-weight: 500;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 17px;
+    width: 100%;
+  }
+
+  input:not(.dropdown-menu input, .option__range input) {
+    display: none;
+  }
+
+  .checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    min-width: 19px;
+    height: 19px;
+    border-radius: 2px;
+    border: 1px solid var(--yellow-dark-color);
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  input:checked ~ .checkmark {
+    background-color: var(--bright-yellow);
+    background-image: url('/img/check.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 10px 16px;
+  }
+
+  &__result {
+    margin-left: auto;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &_sex {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    input {
+      display: none;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--dark-blue-color);
+      width: 33.33%;
+      cursor: pointer;
+      span {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+      }
+    }
+
+    input:checked ~ span {
+      color: #fff;
+      background-color: var(--dark-blue-color);
+    }
+  }
+
+  &-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    input {
+      display: none;
+    }
+    &__icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+    }
+    &__checkmark {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 28px;
+      height: 16px;
+      border-radius: 12px;
+      background-color: var(--grey-color);
+      margin-left: auto;
+      margin-right: 8px;
+      position: relative;
+      cursor: pointer;
+      transition: 0.3s all;
+      &:before {
+        content: '';
+        top: 1px;
+        transform: translateX(25%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: var(--text-grey-color);
+        transition: 0.3s all;
+      }
+    }
+    input:checked ~ &__checkmark {
+      background-color: var(--checkbox-active);
+      &:before {
+        background-color: var(--dark-blue-color);
+        transform: translateX(75%);
+      }
+    }
+  }
+
+  &__caption {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+  }
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    svg {
+      transition: 0.3s all;
+
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .dropdown-menu {
+    margin-left: 36px;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: 0.3s all;
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding-right: 30px;
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    input {
+      margin-right: 10px;
+    }
+    .option__result {
+      margin-left: auto;
+    }
+  }
+
+  input:checked ~ .dropdown-menu {
+    height: 100%;
+    opacity: 1;
+    margin-top: 20px;
+    visibility: visible;
+  }
+  input:checked ~ .dropdown-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  &__range {
+    .range__inputs {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font: var(--normal-font-size) var(--primary-font);
+      font-weight: 300;
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 15px;
+        input {
+          padding: 10px;
+          max-width: 106px;
+          min-width: 106px;
+          width: 100%;
+          outline: none;
+          border: 1px solid var(--grey-color);
+          text-align: center;
+          margin-left: 10px;
+        }
+        &:last-child {
+          margin-right: 0;
+          input {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .rc-slider {
+      margin-bottom: 20px;
+    }
+
+    .rc-slider-rail,
+    .rc-slider-step {
+      height: 1px;
+    }
+
+    .rc-slider-track {
+      height: 1px;
+      background-color: var(--dark-blue-color);
+    }
+
+    .rc-slider-handle-1 {
+      background-color: var(--dark-blue-color);
+      border: none;
+      width: 15px;
+      height: 15px;
+      margin-top: -7px;
+    }
+    .rc-slider-handle-2 {
+      width: 23px;
+      height: 23px;
+      margin-top: -10px;
+      border-width: 4px;
+      border-color: var(--dark-blue-color);
+    }
+    &_mb {
+      margin-bottom: 24.5px;
+    }
+  }
+
+  &_no-icon .option-toggle__icon {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 1223px) {
+  .filter {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: 0.3s all;
+    padding: 20px;
+    &_active {
+      transform: translateX(0);
+    }
+
+    &__close-btn {
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      margin-bottom: 30px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 8px 0px rgba(13, 74, 145, 0.2);
+      border-radius: 8px;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

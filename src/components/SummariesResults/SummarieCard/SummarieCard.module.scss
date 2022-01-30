@@ -1,0 +1,206 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  border: 1px solid var(--grey-color);
+  margin-bottom: 40px;
+  width: 100%;
+  &__img {
+    max-width: 164px;
+    height: 164px;
+    margin-right: 20px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #000;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.description {
+  &__position {
+    margin: 0 0 16px 0;
+    padding: 0;
+    font: var(--card-title-font-size) var(--primary-font);
+    font-weight: 600;
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    color: var(--dark-blue-color);
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 16px;
+    p {
+      margin: 0 20px 0 0;
+      align-items: inherit;
+      display: inherit;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__experience {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    .experience__item {
+      margin-bottom: 12px;
+      font: var(--small-font-size) var(--primary-font);
+      color: var(--text-grey-color);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__status {
+    font: var(--extra-small-font-size) var(--primary-font);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    .updateTime {
+      font: inherit;
+      margin-right: 20px;
+    }
+    &_offline,
+    &_online {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      font: inherit;
+      &::before {
+        content: '';
+        // display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 4px;
+      }
+    }
+    &_offline {
+      color: var(--disabled-color);
+      &::before {
+        background-color: var(--disabled-color);
+      }
+    }
+    &_online {
+      color: var(--green-color);
+      &::before {
+        background-color: var(--green-color);
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: auto;
+  position: relative;
+  gap: 12px;
+  &__more,
+  &__like {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--grey-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &__menu {
+    position: absolute;
+    list-style: none;
+    padding: 18px;
+    margin: 0;
+    right: 56px;
+    top: 0;
+    max-width: 175px;
+    min-width: 175px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid var(--grey-color);
+    li {
+      font: var(--small-font-size) var(--primary-font);
+      margin-bottom: 20px;
+      cursor: pointer;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1223px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    &__img {
+      width: 70px;
+      height: 70px;
+      margin-right: 16px;
+    }
+  }
+  .description {
+    display: flex;
+    &__info {
+      flex-direction: column;
+      align-items: flex-start;
+      p {
+        margin-bottom: 6px;
+        margin-right: 0;
+        font: var(--large-font-size) var(--primary-font);
+        line-height: 20px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &__position {
+      margin: 0 0 6px 0;
+    }
+    &__experience {
+      .experience__item {
+        font: var(--normal-font-size) var(--primary-font);
+      }
+    }
+
+    &__status {
+      width: 100%;
+    }
+
+    &__status,
+    &__status_offline,
+    &__status_online {
+      font: var(--small-font-size) var(--primary-font);
+    }
+  }
+
+  .actions {
+    margin-left: auto;
+    &__more,
+    &__like {
+      padding: 0;
+      border: none;
+    }
+
+    &__menu {
+      right: 32px;
+    }
+  }
+}
