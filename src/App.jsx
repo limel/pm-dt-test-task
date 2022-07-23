@@ -24,7 +24,6 @@ export default function App() {
             <Route path="/hr" element={<HrView />} />
           </Routes>
         </Suspense>
-        <Footer />
       </div>
     </AuthProvider>
   );
